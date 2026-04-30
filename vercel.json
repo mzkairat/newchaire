@@ -1,9 +1,23 @@
 {
-  "outputDirectory": "public",
-  "functions": {
-    "api/order.js": {
-      "memory": 128,
-      "maxDuration": 10
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/order.js",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/api/order",
+      "dest": "/api/order.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
 }
