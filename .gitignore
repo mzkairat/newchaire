@@ -1,3 +1,5 @@
-node_modules
+node_modules/
+database.db
 orders.json
+server.log
 .env
